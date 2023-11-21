@@ -8,6 +8,8 @@ MLFLOW_ROUTE = os.getenv("MLFLOW_ROUTE")
 MLFLOW_MODEL = os.getenv("MLFLOW_MODEL")
 # Loading model
 print("Loading model from: {}".format(MLFLOW_ROUTE))
+mlflow.set_tracking_uri(MLFLOW_ROUTE)
+mlflow.set_experiment("dialogpt")
 logged_model = 'runs:/ff87bd85ce624433b3945c25691f5117/chatbot'
 
 loaded_model = mlflow.pyfunc.load_model(logged_model)
