@@ -4,6 +4,7 @@ import mlflow
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 from flask import Flask
+from flask import request
 
 # Set environnment variables
 MLFLOW_ROUTE = os.getenv("MLFLOW_ROUTE")
