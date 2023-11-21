@@ -26,11 +26,15 @@ app = Flask(__name__)
 @app.route('/',methods=['POST', 'GET'])
 # Return predictions of inference using Iris Test Data
 def prediction():
- 
-    #mes = loaded_model.predict("Which kubernetes should should I use? Red Hat or VMWare?")
-    question = "Which kubernetes should should I use? Red Hat or VMWare?"
+    question = "placeholder"
+    if request.method == 'POST':
+       request_data = request.get_json()
+       question = request_data['question']
+    else:
+       question = "Which kubernetes should should I use? Red Hat or VMWare?"
     tokenizer = AutoTokenizer.from_pretrained("./servepath/chatbot/components/tokenizer")
     model = AutoModelForCausalLM.from_pretrained("./servepath/chatbot/model")
+ 
     new_user_input_ids = tokenizer.encode(question + tokenizer.eos_token, return_tensors='pt')
 
     # append the new user input tokens to the chat history
