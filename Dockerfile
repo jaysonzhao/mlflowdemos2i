@@ -1,4 +1,4 @@
-FROM quay.io/modh/odh-generic-data-science-notebook@sha256:ebb5613e6b53dc4e8efcfe3878b4cd10ccb77c67d12c00d2b8c9d41aeffd7df5
+FROM registry.redhat.io/ubi8/python-38:latest
 
 COPY requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
