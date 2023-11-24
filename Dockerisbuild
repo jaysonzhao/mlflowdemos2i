@@ -1,0 +1,11 @@
+FROM mlflowdemobaseimage:latest
+
+
+
+COPY apis3.py ./apis3.py
+
+#USER 1001
+EXPOSE 8080
+
+
+CMD ["python", "apis3.py", "8080"]
