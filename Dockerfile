@@ -1,4 +1,4 @@
-FROM registry.redhat.io/ubi8/python-38:latest
+FROM registry.redhat.io/ubi8/python-39:latest
 
 COPY requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
