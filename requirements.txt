@@ -21,3 +21,4 @@ torchvision==0.16.1
 tqdm==4.66.1
 transformers==4.34.1
 typing-extensions==4.4.0
+boto3
